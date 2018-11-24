@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<environments default="development">
+        <environment id="development">
+            <!-- 使用jdbc事务管理，目前由mybatis来管理 -->
+            <transactionManager type="JDBC" />
+            <!-- 数据库连接池，目前由mybatis来管理 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="oracle.jdbc.OracleDriver" />
+                <property name="url" value="jdbc:oracle:thin:@10.244.129.4:1521:fordclub" />
+                <property name="username" value="crm" />
+                <property name="password" value="Abcd1234!" />
+            </dataSource>
+        </environment>
+    </environments>
+	<mappers>
+	    <mapper resource="sqlmap/BeforeObSqlMap.xml" />
+	</mappers>
+</configuration>
